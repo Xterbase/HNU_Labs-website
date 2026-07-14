@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — HNU AI DataScience Labs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/AIDS%20logo.png" alt="AI and DataScience, Hannam University" class="logo-img">
+                HNU AI DataScience Labs
+            </a>
+            <nav class="gnb">
+                <a href="index.html">Home</a>
+
+                <div class="has-dropdown">
+                    <a href="members.html">Members</a>
+                    <div class="dropdown">
+                        <a href="members.html#professor">Professor</a>
+                        <a href="members.html#students">Students</a>
+                    </div>
+                </div>
+
+                <a href="research.html" class="active">Research / Project</a>
+
+
+                <div class="has-dropdown">
+                    <a href="news.html">News</a>
+                    <div class="dropdown">
+                        <a href="news.html#news">News</a>
+                        <a href="news.html#notices">Notices</a>
+                    </div>
+                </div>
+
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+
+            <!-- Research 섹션 — 연구실 단위(Lab 2 · Lab 3)로 묶어 나열. Project 와 한 페이지에 세로로 합침 -->
+            <section id="research">
+                <h1 class="page-title">Research</h1>
+
+                <!-- TODO(dummy): 아래 연구 주제는 교수 전공분야(CLAUDE.md 3-3 표)에서 도출한 초안이다. 실제 연구내용으로 확인·교체 필요 -->
+                <div class="lab-group">
+                    <h2 class="lab-group__title">Lab 2</h2>
+
+                    <div class="profile-item">
+                        <div class="profile-item__thumb profile-item__thumb--wide">
+                            <img src="assets/img/LAb2-1.jpg" alt="Autonomous vehicle detecting surrounding cars and traffic signals on a city road">
+                        </div>
+                        <div class="profile-item__body">
+                            <h3>Smart Mobility and Autonomous Driving</h3>
+                            <p>We study AI models that let vehicles perceive their surroundings and decide how to act, and we evaluate how those decisions perform once they meet real road conditions.</p>
+
+                            <!-- Read more → 그 자리에서 펼쳐지는 아코디언 (CLAUDE.md 3-5) -->
+                            <div id="research-lab2-1-body" class="readmore-body">
+                                <p>Autonomous driving asks a vehicle to do in milliseconds what a human driver does by instinct: read the scene, predict what everything else will do next, and commit to a maneuver. Our work covers the learning models behind that loop, from perception on sensor data through to driving policy.</p>
+                                <p>Because a model that performs well on a benchmark can still fail on an unfamiliar road, we place equal weight on evaluation — measuring how systems behave in the conditions and edge cases that real deployment brings, and feeding what we find back into the models.</p>
+                            </div>
+                            <button type="button" class="readmore-toggle"
+                                    aria-controls="research-lab2-1-body" aria-expanded="false">Read more →</button>
+                        </div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-item__thumb profile-item__thumb--wide">
+                            <img src="assets/img/LAb2-2.jpg" alt="Traffic control dashboard showing a real-time congestion heat map and mobility demand analysis">
+                        </div>
+                        <div class="profile-item__body">
+                            <h3>Transportation Big Data and Intelligent Transport Systems</h3>
+                            <p>We turn large-scale mobility and geospatial data into an account of how people and goods actually move — and into evidence that transport policy and services can be built on.</p>
+                            <div id="research-lab2-2-body" class="readmore-body">
+                                <p>Every trip leaves a trace. Traffic sensors, transit records, and location data together describe how a city moves, but only after the raw signals are cleaned, joined across sources, and placed on the map. We build the analytics that make that possible, combining transportation big data with geospatial information to model demand, congestion, and travel behavior.</p>
+                                <p>These models support Intelligent Transport Systems (ITS) — where the analysis feeds back into signal control, transit planning, and traffic operations. We also study the data economy around mobility: how transport data is shared and valued once it becomes a resource that public agencies and private operators both depend on.</p>
+                            </div>
+                            <button type="button" class="readmore-toggle"
+                                    aria-controls="research-lab2-2-body" aria-expanded="false">Read more →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lab-group">
+                    <h2 class="lab-group__title">Lab 3</h2>
+
+                    <div class="profile-item">
+                        <div class="profile-item__thumb profile-item__thumb--wide">
+                            <img src="assets/img/audio.jpg" alt="Audio analysis dashboard showing a real-time spectrogram and anomaly confidence scores">
+                        </div>
+                        <div class="profile-item__body">
+                            <h3>Deep Learning for Audio Anomaly Detection</h3>
+                            <p>We develop deep learning models that listen to machines and sound out what is wrong — detecting the abnormal sounds that signal a fault, often before it becomes a failure.</p>
+                            <div id="research-lab3-1-body" class="readmore-body">
+                                <p>Equipment tends to announce trouble before it breaks. A bearing starts to grind, a motor changes pitch — audible to an experienced ear, but easy to miss on a factory floor and impossible to monitor around the clock by hand. We train deep learning models to do that listening continuously.</p>
+                                <p>The central difficulty is that faults are rare: a working machine produces thousands of hours of normal sound and almost no examples of failure. Our research therefore concentrates on learning what normal sounds like well enough to recognize any departure from it, rather than learning each fault type from labeled examples that do not exist in sufficient number.</p>
+                            </div>
+                            <button type="button" class="readmore-toggle"
+                                    aria-controls="research-lab3-1-body" aria-expanded="false">Read more →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project 섹션 — 연구실 단위(Lab 1). Research 아래에 이어서 배치 -->
+            <section id="project" class="section-below">
+                <h1 class="page-title">Project</h1>
+
+                <!-- TODO(dummy): 프로젝트명·설명은 교수 전공분야에서 도출한 초안. 기간·지원기관은 지어낼 수 없어 자리표시자로 둔다 — 실제 값 필요 -->
+                <div class="lab-group">
+                    <h2 class="lab-group__title">Lab 1</h2>
+
+                    <div class="profile-item">
+                        <div class="profile-item__thumb profile-item__thumb--wide">
+                            <img src="assets/img/project2.jpg" alt="A noisy photograph shown next to its denoised result">
+                        </div>
+                        <div class="profile-item__body">
+                            <h3>Deep Learning Based Image Analysis</h3>
+                            <p><!-- TODO(dummy): 실제 기간·지원기관 필요 -->Period · Funding agency</p>
+                            <p>Building recognition and segmentation models that read images automatically, and adapting them to the domains where the images actually come from.</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-item__thumb profile-item__thumb--wide">
+                            <img src="assets/img/project1.jpg" alt="Web application architecture diagram showing a client exchanging AJAX, JSON and HTML with web services and business logic on the server">
+                        </div>
+                        <div class="profile-item__body">
+                            <h3>Web Applications for Big Data Services</h3>
+                            <p><!-- TODO(dummy): 실제 기간·지원기관 필요 -->Period · Funding agency</p>
+                            <p>Designing web platforms that put large-scale data in front of the people who need it — collecting, processing, and visualizing it in a form they can act on.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>HNU AI DataScience Labs</p>
+            <p class="footer-sub">Department of AI Data Science, Hannam University</p>
+            <p class="footer-sub">© 2026 AI DataScience Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

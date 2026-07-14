@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DataScience Labs — Hannam University</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 상단 헤더 (모든 페이지 공통) -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/AIDS%20logo.png" alt="AI and DataScience, Hannam University" class="logo-img">
+                HNU AI DataScience Labs
+            </a>
+            <nav class="gnb">
+                <a href="index.html" class="active">Home</a>
+
+                <div class="has-dropdown">
+                    <a href="members.html">Members</a>
+                    <div class="dropdown">
+                        <a href="members.html#professor">Professor</a>
+                        <a href="members.html#students">Students</a>
+                    </div>
+                </div>
+
+                <a href="research.html">Research / Project</a>
+
+
+                <div class="has-dropdown">
+                    <a href="news.html">News</a>
+                    <div class="dropdown">
+                        <a href="news.html#news">News</a>
+                        <a href="news.html#notices">Notices</a>
+                    </div>
+                </div>
+
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero — 배경은 본문과 동일한 남색 단색, CTA 버튼 없음 -->
+    <section class="hero">
+        <div class="container">
+            <!-- TODO(dummy): 연구실 정식 명칭 확정 시 교체 -->
+            <h1 class="hero__title">
+                <img class="hero__logo" src="assets/AIDS%20logo.png" alt="AI DataScience Labs">
+                <span class="hero__name">AI DataScience Labs of Hannam Univ.</span>
+            </h1>
+            <p class="hero__tagline">
+                <!-- TODO(dummy): 실제 값 필요 -->
+                'Understanding the world through AI and DataScience'
+            </p>
+        </div>
+    </section>
+
+    <!-- Hero ↔ About 경계 구분선 (양쪽 여백 + 끝이 흐려지는 선) -->
+    <hr class="section-divider">
+
+    <!-- About — 연구 그룹 소개 (숫자 지표 strip 없음) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="page-title">About</h2>
+            <!-- TODO(dummy): 실제 값 필요 -->
+            <p>
+                AI 기술의 발전에 따라, 산업 각 분야에서 데이터를 분석하고 AI를 활용할 수 있는 전문가에 대한 수요가 증가하고 있습니다.
+                <Br>
+                <br>'Data'는 AI 시대에서 가장 중요한 자산 중 하나입니다. 
+                <p>
+                AI는 다양한 분야에서 수집되는 대규모 데이터를 통해 금융, 로보틱스, SW, 모빌리티 산업 등에서 새로운 가치를 창출하고 있습니다. 따라서 데이터 분석 능력을 갖춘 전문가의 수요는 지속적으로 늘어나고 있습니다.
+                </p>
+                <p>한남대학교 AI DataScience학과는 이러한 사회적 흐름을 반영하여, 데이터 과학의 핵심 원칙과 AI의 최신 동향에 발맞춰 기술 · 도구를 교육합니다. 실제 현장 및 문제해결 중심의 교육을 통해 학생들이 데이터 분석가 및 AI 전문가로 성장할 수 있도록 지원합니다.
+                </p>
+            </p>
+            <br>
+            <p>
+            Our mission is to redefine the boundaries of what can be understood through data.
+            <p>
+            <br>· Together, we go beyond raw information, modeling the complex realities hidden within data.
+            <br>
+            <br>· We challenge the limits by developing intelligent systems that reveal deeper structures and insights beyond traditional analysis.
+            <br>
+            <br>· Generative models and advanced AI(especially LLM), we believe, are the most powerful solution for building systems that truly understand the world.
+            <br>
+            <br>· Grounded in simple, clear principles, we aim to create technology that is both intuitive and impactful—solutions that transform how we interpret and act upon data.
+            </p>
+            </p>
+            <p>
+            By combining the rigor of data science with the creativity of artificial intelligence, we transform complex challenges into actionable intelligence. We build algorithms that analyze, synthesize, and generate insights from vast datasets to construct comprehensive world models. Along the way, our models uncover meaningful patterns and reveal the hidden value in data, pushing the frontier of data-driven discovery and decision-making. 
+            </p>
+        </div>
+    </section>
+
+    <!-- Research Areas 미리보기 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="page-title">Research / Project</h2>
+            <!-- 미리보기 3장 — Lab 2 · Lab 3 · Lab 1 에서 한 항목씩. 본문은 research.html 이 담당한다 -->
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card__lab">Lab 2 · Research</span>
+                    <h3>Smart Mobility and Autonomous Driving</h3>
+                    <p>AI models that let vehicles read the road and decide how to act — and the evaluation that tells us how those decisions hold up in real traffic.</p>
+                </div>
+                <div class="card">
+                    <span class="card__lab">Lab 3 · Research</span>
+                    <h3>Deep Learning for Audio Anomaly Detection</h3>
+                    <p>Models that listen to machines and pick out the abnormal sounds that signal a fault, often before it becomes a failure.</p>
+                </div>
+                <div class="card">
+                    <span class="card__lab">Lab 1 · Project</span>
+                    <h3>Deep Learning Based Image Analysis</h3>
+                    <p>Recognition, segmentation and restoration models that read images automatically, adapted to the domains the images come from.</p>
+                </div>
+            </div>
+            <a href="research.html" class="more-link">See more →</a>
+        </div>
+    </section>
+
+
+    <!-- 하단 푸터 (모든 페이지 공통) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>HNU AI DataScience Labs</p>
+            <p class="footer-sub">Department of AI Data Science, Hannam University</p>
+            <p class="footer-sub">© 2026 AI DataScience Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

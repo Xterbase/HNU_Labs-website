@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — HNU AI DataScience Labs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/AIDS%20logo.png" alt="AI and DataScience, Hannam University" class="logo-img">
+                HNU AI DataScience Labs
+            </a>
+            <nav class="gnb">
+                <a href="index.html">Home</a>
+
+                <div class="has-dropdown">
+                    <a href="members.html">Members</a>
+                    <div class="dropdown">
+                        <a href="members.html#professor">Professor</a>
+                        <a href="members.html#students">Students</a>
+                    </div>
+                </div>
+
+                <a href="research.html">Research / Project</a>
+
+
+                <div class="has-dropdown">
+                    <a href="news.html">News</a>
+                    <div class="dropdown">
+                        <a href="news.html#news">News</a>
+                        <a href="news.html#notices">Notices</a>
+                    </div>
+                </div>
+
+                <a href="support.html" class="active">Support</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+
+            <!-- 제목은 두 상태(목록/작성)에서 그대로 유지된다 -->
+            <h1 class="page-title page-title--center">Request Information Update</h1>
+
+            <!-- 목록 상태 -->
+            <section id="support-list" class="support-block is-active">
+                <div class="support-head">
+                    <button type="button" class="btn-write" data-support-open-write>Write</button>
+                </div>
+
+                <div class="board-wrap">
+                    <table class="board-table">
+                        <thead>
+                            <tr>
+                                <th class="col-no">No.</th>
+                                <th class="col-title">Title</th>
+                                <th class="col-writer">Requester</th>
+                                <th class="col-date">Date</th>
+                                <th class="col-status">Status</th>
+                            </tr>
+                        </thead>
+                        <!-- 사용자가 등록한 글은 js/main.js 가 이 tbody 맨 위에 끼워 넣는다 (localStorage) -->
+                        <tbody id="support-tbody">
+                            <!-- TODO(dummy): 아래 3건은 시연용 고정 행이다. 실제 요청 게시글 필요 -->
+                            <tr>
+                                <td class="col-no">3</td>
+                                <td class="col-title"><a href="#">Please add my recent award</a></td>
+                                <td class="col-writer">Gildong Hong</td>
+                                <td class="col-date">2026-07-06</td>
+                                <td class="col-status"><span class="badge badge-pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-no">2</td>
+                                <td class="col-title"><a href="#">Update my email address</a></td>
+                                <td class="col-writer">Chulsoo Kim</td>
+                                <td class="col-date">2026-06-28</td>
+                                <td class="col-status"><span class="badge badge-done">Done</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-no">1</td>
+                                <td class="col-title"><a href="#">Fix my degree status</a></td>
+                                <td class="col-writer">Minsu Jang</td>
+                                <td class="col-date">2026-06-15</td>
+                                <td class="col-status"><span class="badge badge-done">Done</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 작성 상태 — 목록 자리에 대신 표시된다. 페이지 이동 없음 -->
+            <section id="support-write" class="support-block">
+                <!-- 좌측 상단 뒤로가기: 작성 내용을 버리고 목록으로 복귀 -->
+                <button type="button" class="back-arrow" data-support-back aria-label="Back to list">←</button>
+
+                <!-- 등록 처리는 js/main.js 의 initSupportBoard() 가 맡는다.
+                     ⚠️ 서버가 없어 localStorage(작성자 본인 브라우저)에만 저장된다 — 담당자에게 전달되지 않는다 -->
+                <form class="write-form" id="support-form">
+                    <label>Title
+                        <input type="text" name="title" required maxlength="80">
+                    </label>
+                    <label>Requester
+                        <input type="text" name="requester" required maxlength="30">
+                    </label>
+                    <label>Content
+                        <textarea name="content" required maxlength="1000"></textarea>
+                    </label>
+
+                    <button type="submit" class="btn-write">Submit</button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>HNU AI DataScience Labs</p>
+            <p class="footer-sub">Department of AI Data Science, Hannam University</p>
+            <p class="footer-sub">© 2026 AI DataScience Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
