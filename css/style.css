@@ -26,7 +26,6 @@
     /* 카테고리 색 — News 배지 · 필터 버튼 공용 */
     --cat-award: #f2c94c;               /* 노랑(골드) */
     --cat-paper: #4fd18b;               /* 초록(민트) */
-    --cat-event: #f87171;               /* 빨강(코랄) */
 
     /* 레이아웃 (전 페이지 공통) */
     --container: 1080px;
@@ -327,17 +326,13 @@ img {
     font-size: 15px;
 }
 
-/* 7-3. 연구실 그룹 구분 — Students 탭 3그룹 */
+/* 7-3. 연구실 그룹 구분 — Labs 페이지 3그룹 */
 .lab-group {
     margin-bottom: 48px;
 }
 
-/* 연구실 제목 줄 — 왼쪽 이름, 오른쪽 Lab Info 버튼. 밑줄은 이 행이 갖는다 */
+/* 연구실 제목 줄 — 이름만 놓고 밑줄은 이 행이 갖는다 */
 .lab-group__head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
     margin-bottom: 8px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--purple);
@@ -350,17 +345,38 @@ img {
     color: var(--point-white);
 }
 
-/* 해당 연구실의 자체 홈페이지로 이동 (새 탭) — CLAUDE.md 3-3 */
+/* 한 연구실 안의 교수 행들은 구분선 없이 이어 붙이고, 그룹의 마지막 행만 밑줄을 갖는다
+   (Lab 2 처럼 교수가 여럿이어도 그룹 전체가 하나의 상자로 읽히도록) */
+.lab-group .profile-item {
+    border-bottom: none;
+}
+
+.lab-group .profile-item:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+/* 해당 연구실의 자체 홈페이지로 이동 (새 탭) — CLAUDE.md 3-3
+   그룹 마지막 교수 행 안에 넣어 그룹 상자의 오른쪽 아래 모서리에 붙인다.
+   크기는 프로필 사진(180×220)의 1/4 면적 — 사진 폭은 그대로 두고 높이만 1/4로 줄인 가로형 박스 */
 .btn-lab-info {
-    flex: none;
-    color: var(--purple-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    margin-left: auto;
+    width: 180px;
+    height: 55px;
+    background: var(--purple);
+    border: 1px solid var(--purple);
+    color: var(--point-white);
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
 }
 
 .btn-lab-info:hover {
-    color: var(--point-white);
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
 }
 
 /* 7-4. 게시판 표 — news · notices · support 공용
@@ -414,7 +430,8 @@ img {
     color: var(--purple-text);
 }
 
-/* 7-5. 뱃지 — News/Notices 분류(Award·Paper·Event), Support 처리상태(Pending·Done) */
+/* 7-5. 뱃지 — News 분류(Award·Paper), Support 처리상태(Pending·Done).
+   Notices 에는 뱃지를 달지 않는다 (CLAUDE.md 3-8) */
 .badge {
     display: inline-block;
     padding: 3px 10px;
@@ -432,11 +449,6 @@ img {
 .badge-paper {                      /* 초록(민트) 계열 */
     border-color: var(--cat-paper);
     color: var(--cat-paper);
-}
-
-.badge-event {                      /* 빨강(코랄) 계열 */
-    border-color: var(--cat-event);
-    color: var(--cat-event);
 }
 
 .badge-pending {
@@ -518,7 +530,8 @@ img {
 }
 
 /* 7-9. News 카테고리 필터 + 카드 리스트 (news.html)
-   필터 버튼(All·Award·Paper·Event)으로 .news-card 를 걸러낸다. 카드 클릭 = 원문 새 탭 이동. */
+   필터 버튼(All·Award·Paper)으로 .news-card 를 걸러낸다. 카드 클릭 = 사이트 안의 상세 페이지로 이동.
+   Notices 탭은 같은 카드 리스트를 필터·뱃지 없이 재사용한다. */
 .news-filter {
     display: flex;
     flex-wrap: wrap;
@@ -558,12 +571,6 @@ img {
 .news-filter__btn.is-active[data-filter="paper"] {
     background: var(--cat-paper);
     border-color: var(--cat-paper);
-    color: var(--navy-deep);
-}
-
-.news-filter__btn.is-active[data-filter="event"] {
-    background: var(--cat-event);
-    border-color: var(--cat-event);
     color: var(--navy-deep);
 }
 
