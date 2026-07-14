@@ -3,3 +3,6 @@
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# 프로젝트 설계서 (국문 내부 문서 — 공개 저장소에 올리지 않는다)
+CLAUDE.md

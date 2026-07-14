@@ -4,18 +4,6 @@
    색 규칙: 배경 = 남색 / 포인트 = 자주색 + 흰색 (파란색 사용 금지)
    ============================================================ */
 
-/* ---------- 0. 웹폰트 (self-host) ---------- */
-/* Polestar Unica77 TT — assets/fonts/ 에 self-host (외부 CDN 의존 없음).
-   woff2 우선, woff 폴백. 로딩 중에는 swap 으로 폴백 산세리프를 먼저 보여준다. */
-@font-face {
-    font-family: "Polestar Unica77 TT";
-    src: url("../assets/fonts/unica77.woff2") format("woff2"),
-         url("../assets/fonts/unica77.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
 /* ---------- 1. 색상 및 공통 변수 ---------- */
 :root {
     /* 배경 — 남색 계열 */
@@ -52,9 +40,8 @@
 
 body {
     margin: 0;
-    /* Polestar Unica77 TT (self-host 웹폰트) → 없으면 제네릭 sans-serif 폴백.
-       맨 뒤 제네릭이 없으면 Windows 에서 serif(Times)로 떨어진다. 따옴표는 폰트명에만. */
-    font-family: "Polestar Unica77 TT", sans-serif;
+    /* 제네릭 키워드만 사용 — 웹폰트를 싣지 않는다. 각 OS 기본 산세리프로 렌더된다. */
+    font-family: sans-serif;
     color: var(--text);
     line-height: 1.6;
     background: var(--navy-bg);         /* 그라디언트·배경이미지 사용 안 함 */
