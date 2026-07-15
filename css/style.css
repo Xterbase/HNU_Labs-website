@@ -435,9 +435,7 @@ img {
 .board-table .col-no,
 .board-table .col-date,
 .board-table .col-status,
-.board-table .col-cat,
-.board-table .col-writer,
-.board-table .col-file {
+.board-table .col-writer {
     width: 130px;
     text-align: center;
 }
