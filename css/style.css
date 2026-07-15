@@ -30,6 +30,14 @@
     /* 레이아웃 (전 페이지 공통) */
     --container: 1080px;
     --header-h: 64px;
+
+    /* 모서리 라운드 — 3단계로 고정 (카드/입력 8, 버튼 6, 뱃지 4) */
+    --radius-card: 8px;
+    --radius-btn: 6px;
+    --radius-badge: 4px;
+
+    /* 상태 전환 속도 — 전 요소 공통 */
+    --t: .15s;
 }
 
 /* ---------- 2. Reset & Base ---------- */
@@ -145,6 +153,7 @@ img {
     border-bottom: 2px solid transparent;
     white-space: nowrap;       /* 'Research / Project' 가 줄바꿈·축소되지 않도록 */
     flex-shrink: 0;            /* 공간이 부족해도 항목을 줄이지 않는다 */
+    transition: color var(--t), border-color var(--t);
 }
 
 .gnb > a:hover,
@@ -175,6 +184,8 @@ img {
     background: var(--navy-deep);
     border: 1px solid var(--line);
     border-top: none;
+    border-radius: 0 0 var(--radius-btn) var(--radius-btn);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
 }
 
 .has-dropdown:hover .dropdown {
@@ -187,6 +198,7 @@ img {
     font-size: 14px;
     color: var(--text-muted);
     white-space: nowrap;
+    transition: background var(--t), color var(--t);
 }
 
 .dropdown a:hover {
@@ -250,6 +262,14 @@ img {
     padding: 24px;
     background: var(--surface);
     border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .25);
+    transition: transform var(--t), box-shadow var(--t);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
 }
 
 .card h3 {
@@ -295,6 +315,7 @@ img {
     object-fit: cover;
     object-position: center 25%;
     border: 1px solid var(--line);
+    border-radius: var(--radius-card);
     background: var(--surface);
 }
 
@@ -368,10 +389,12 @@ img {
     height: 55px;
     background: var(--purple);
     border: 1px solid var(--purple);
+    border-radius: var(--radius-btn);
     color: var(--point-white);
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
+    transition: background var(--t), border-color var(--t);
 }
 
 .btn-lab-info:hover {
@@ -402,6 +425,7 @@ img {
 
 .board-table td {
     color: var(--text-muted);
+    transition: background var(--t);
 }
 
 .board-table tbody tr:hover td {
@@ -424,6 +448,7 @@ img {
 
 .board-table .col-title a {
     color: var(--text);
+    transition: color var(--t);
 }
 
 .board-table .col-title a:hover {
@@ -438,6 +463,7 @@ img {
     font-size: 12px;
     font-weight: 700;
     border: 1px solid transparent;
+    border-radius: var(--radius-badge);
 }
 
 /* 카테고리 배지 — 박스(외곽선)+글자만 색상, 채움 없음. 남색 배경에서 잘 보이는 톤 */
@@ -470,7 +496,9 @@ img {
     font-size: 14px;
     font-weight: 700;
     border: none;
+    border-radius: var(--radius-btn);
     cursor: pointer;
+    transition: background var(--t);
 }
 
 .btn-write:hover {
@@ -483,6 +511,7 @@ img {
     color: var(--purple-text);
     font-size: 14px;
     font-weight: 700;
+    transition: color var(--t);
 }
 
 .more-link:hover {
@@ -500,6 +529,7 @@ img {
     font-size: 22px;
     line-height: 1;
     cursor: pointer;
+    transition: color var(--t);
 }
 
 .back-arrow:hover {
@@ -523,6 +553,7 @@ img {
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
+    transition: color var(--t);
 }
 
 .readmore-toggle:hover {
@@ -543,10 +574,12 @@ img {
     padding: 7px 18px;
     background: none;
     border: 1px solid var(--line);
+    border-radius: var(--radius-btn);
     color: var(--text-muted);
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
+    transition: background var(--t), border-color var(--t), color var(--t);
 }
 
 .news-filter__btn:hover {
@@ -585,6 +618,7 @@ img {
     padding: 22px 6px;
     border-bottom: 1px solid var(--line);
     color: var(--text);
+    transition: background var(--t);
 }
 
 .news-card:hover {
@@ -650,6 +684,7 @@ img {
     margin: 0 0 8px;
     font-size: 18px;
     color: var(--point-white);
+    transition: color var(--t);
 }
 
 .news-card:hover .news-card__title {
@@ -670,6 +705,7 @@ img {
     color: var(--text-muted);
     font-size: 14px;
     font-weight: 700;
+    transition: color var(--t);
 }
 
 .news-back:hover {
@@ -743,8 +779,10 @@ img {
     padding: 10px 12px;
     background: var(--surface);
     border: 1px solid var(--line);
+    border-radius: var(--radius-btn);
     color: var(--text);
     font: inherit;
+    transition: border-color var(--t);
 }
 
 .write-form textarea {
@@ -764,6 +802,8 @@ img {
     height: 380px;
     margin-bottom: 40px;
     border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    overflow: hidden;         /* iframe 모서리가 라운드 밖으로 삐져나오지 않도록 */
     background: var(--surface);
 }
 
